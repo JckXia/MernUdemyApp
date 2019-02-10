@@ -4,7 +4,7 @@ const passport=require('passport');
 module.exports=(app)=>{
 
   app.get('/',(req,res)=>{
-    res.send({message:Welcome});
+    res.send({message:'Hi'});
   })
   //Exporting functions from tis file
 app.get('/auth/google',passport.authenticate('google',{
