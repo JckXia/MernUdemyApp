@@ -16,8 +16,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 require('./models/User');
 require('./services/passport'); //file inside passpVAort is executed
 
