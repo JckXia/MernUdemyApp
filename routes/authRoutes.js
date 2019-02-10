@@ -13,7 +13,9 @@ app.get('/auth/google/callback',passport.authenticate('google'));
 app.get('/api/current_user',(req,res)=>{
     res.send(req.user);
 });
-
+app.get('/',(req,res)=>{
+  res.send('HI there!');
+})
 app.get('/api/logout',(req,res)=>{
   //Takes the cookie which contains user id, and kills it
     req.logout();
