@@ -2,6 +2,10 @@
 const passport=require('passport');
 
 module.exports=(app)=>{
+
+  app.get('/',(req,res)=>{
+    res.send({message:Welcome!});
+  })
   //Exporting functions from tis file
 app.get('/auth/google',passport.authenticate('google',{
   scope:['profile','email']
@@ -13,9 +17,7 @@ app.get('/auth/google/callback',passport.authenticate('google'));
 app.get('/api/current_user',(req,res)=>{
     res.send(req.user);
 });
-app.get('/',(req,res)=>{
-  res.send('HI there!');
-})
+
 app.get('/api/logout',(req,res)=>{
   //Takes the cookie which contains user id, and kills it
     req.logout();
